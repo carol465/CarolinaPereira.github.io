@@ -1,0 +1,129 @@
+/* Estilo do Cabeçalho */
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono:wght@400;700&family=Oxygen:wght@300;400;700&display=swap');
+
+/* CONTEÚDO */
+
+html {
+    height: 100%; 
+}
+
+body {
+    margin: 0;
+    font-family: 'Oxygen', sans-serif;
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    min-height: 100vh;
+    background-color: transparent; 
+}
+
+.conteudo-principal {
+    position: relative; 
+    z-index: 1; 
+    width: 90%;
+    max-width: 1200px;
+    padding: 0 40px; 
+    display: flex; 
+    height: 100vh; 
+}
+
+.content-wrapper {
+    margin-left: 10%; 
+    max-width: 800px;
+    color: white; 
+    margin-top: 15vh; 
+}
+
+.main-title {
+    font-size: 5em; 
+    font-weight: 700;
+    line-height: 1.1; 
+    margin-bottom: 5px; 
+    color: white; 
+}
+
+.subtitle {
+    font-size: 1.2em; 
+    font-weight: 400; 
+    margin-top: 50px;
+    margin-bottom: 70px; 
+    color: white;
+}
+
+.butoes, .buttons-container {
+    display: flex;
+    gap: 15px; 
+    margin-top: 15px; 
+}
+
+.btn {
+    font-family: 'Oxygen Mono', monospace;
+    font-weight: 400;
+    padding: 12px 35px; 
+    border-radius: 50px; 
+    cursor: pointer;
+    font-size: 1.1em; 
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; 
+    border: none; 
+    background-color: white; 
+    color: #160124; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.btn-primary { 
+    background-color: white; 
+    color: #da4167;
+    border-color: white; 
+}
+
+.btn-secondary { 
+    background-color: #ed6742;
+    color: white; 
+    border: 2px solid #ed6742;
+}
+
+.btn:hover {
+    background-color: #f0f0f0; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary:hover {
+    background-color: #ed6742;
+}
+
+/* IMAGEM DE FUNDO */
+
+/* ... (restante do seu CSS permanece o mesmo) ... */
+
+/* IMAGEM DE FUNDO - NOVA TENTATIVA DE CORREÇÃO */
+
+.fundo-site {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    /* Usar 100vw e 100vh para garantir que ocupa a viewport total */
+    width: 100vw; 
+    height: 100vh; 
+    z-index: -1; 
+    overflow: hidden; 
+    /* Adicionar display flex e alinhar para garantir que o SVG se ajuste ao centro se houver espaços */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fundo-site svg {
+    /* Remover position absolute e top/left, deixar o flexbox fazer o trabalho */
+    /* width e height devem ser 100% para o SVG ocupar todo o espaço do flex container */
+    width: 100%; 
+    height: 100%;
+    /* Adicionar preserveAspectRatio para controlar como o SVG escala */
+    /* "xMidYMid slice" significa que ele irá cortar (slice) para preencher, mantendo o aspeto */
+    /* ou "none" para esticar sem manter a proporção, o que pode distorcer */
+    /* Vamos testar com "xMidYMid slice" primeiro, que é o mais comum para fundos. */
+    /* Se quiser que estique e preencha *exatamente* sem cortes, use "none" (mas pode distorcer) */
+    preserveAspectRatio: xMidYMid slice; 
+    z-index: 1; 
+}
